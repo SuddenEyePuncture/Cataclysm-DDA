@@ -2209,7 +2209,7 @@
     "id": "mon_lady_bug_giant",
     "type": "MONSTER",
     "name": { "str": "giant lady bug" },
-    "description": "A lady beetle roughly the size of a horse.  Its forewings are red with black spots, a distinctive appearance traditionally associated with good luck and adored by children.  Despite cute looks it is a ferocious predator capable of killing swarms of ants and aphids.",
+    "description": "This monster was cute with its black spotted red forewings and was adored by children as well as associated with good luck when it was the normal size, but this is clearly a ferocious predator capable of killing swarms of ants and aphids.",
     "default_faction": "ladybug",
     "bodytype": "insect",
     "species": [ "INSECT" ],
