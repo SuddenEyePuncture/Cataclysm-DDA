@@ -269,7 +269,7 @@
     "symbol": "o",
     "spoils_in": "3 days",
     "description": "A large, sticky and wet water strider egg.  You should probably put it back in the water.",
-    "rot_spawn": "GROUP_EGG_ANTLION",  //TODO
+    "rot_spawn": "GROUP_EGG_STRIDER",
     "rot_spawn_chance": 100
   },
   {
@@ -279,7 +279,7 @@
     "color": "light_green",
     "symbol": "o",
     "description": "A white and long pill-shaped grasshopper egg.  Inside you can see two twitching legs.",
-    "rot_spawn": "GROUP_EGG_ANTLION",  //TODO
+    "rot_spawn": "GROUP_EGG_GRASSHOPPER",
     "rot_spawn_chance": 100
   },
   {
@@ -290,8 +290,8 @@
     "symbol": "o",
     "spoils_in": "7 days",
     "description": "A lady bug egg.  It looks like a huge yellow rice grain.  Inside there is a hungry translucent lavrae.",
-    "rot_spawn": "GROUP_EGG_ANTLION",  //TODO
-    "rot_spawn_chance": 100
+    "rot_spawn": "GROUP_EGG_LADY_BUG",
+    "rot_spawn_chance": 50
   },
   {
     "id": "egg_mole_cricket",
@@ -301,8 +301,8 @@
     "symbol": "o",
     "spoils_in": "9 days",
     "description": "A mole cricket egg covered in bits of sand and dirt.  It's brown with a few black dots on it.",
-    "rot_spawn": "GROUP_EGG_ANTLION",  //TODO
-    "rot_spawn_chance": 100
+    "rot_spawn": "GROUP_EGG_MOLE_CRICKET",  //TODO
+    "rot_spawn_chance": 50
   },
   {
     "id": "egg_mantis",
@@ -311,9 +311,9 @@
     "color": "green",
     "symbol": "%",
     "spoils_in": "13 days",
-    "description": "Praying mantis eggs glued to each other inside a case.  It resembles a trilobite or woodlouse.",
-    "rot_spawn": "GROUP_EGG_ANTLION",  //TODO
-    "rot_spawn_chance": 100
+    "description": "Praying mantis eggs glued to each other inside a strange-looking case.  It resembles a trilobite or woodlouse.",
+    "rot_spawn": "GROUP_EGG_MANTIS",  //TODO
+    "rot_spawn_chance": 50
   },
   {
     "type": "COMESTIBLE",
