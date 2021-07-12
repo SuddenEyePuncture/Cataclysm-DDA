@@ -153,5 +153,5 @@
     "type": "monstergroup",
     "default": "mon_mantis_small",
     "monsters": [ { "monster": "mon_mantis_small", "freq": 1000, "cost_multiplier": 1 } ]
-  },
+  }
 ]
