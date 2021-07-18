@@ -2234,6 +2234,10 @@
     "proportional": { "hp": 0.5, "speed": 1.1 },
     "volume": "750 ml",
     "weight": "1 kg",
+    "delete": {
+    "reproduction": { "baby_egg": "egg_grasshopper", "baby_count": 3, "baby_timer": 15 },
+    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ]
+    },
     "upgrades": { "half_life": 7, "into": "mon_mantis_giant" }
   },
   {
@@ -2358,6 +2362,10 @@
     "volume": "3 L",
     "weight": "4 kg",
     "melee_cut": 8,
+    "delete": {
+    "reproduction": { "baby_egg": "egg_strider", "baby_count": 3, "baby_timer": 10 },
+    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ]
+    },
     "upgrades": { "half_life": 14, "into": "mon_strider_giant" }
   },
   {
