@@ -261,14 +261,14 @@
     "rot_spawn": "GROUP_EGG_WASP",
     "rot_spawn_chance": 100
   },
-  { 
-    "id": "egg_antlion",
+  { "id": "egg_antlion",
     "name": { "str": "antlion egg" },
     "copy-from": "egg_insect",
     "color": "yellow",
     "symbol": "o",
     "proportional": { "weight": 2, "calories": 2, "volume": 2 },
     "vitamins": [ [ "vitA", 38 ], [ "calcium", 14 ], [ "iron", 36 ], [ "vitB", 132 ], [ "mutant_toxin", 50 ] ],
+    "spoils_in": "5 days",
     "description": "A large white antlion egg.  There is something hard inside.",
     "rot_spawn": "GROUP_EGG_ANTLION",
     "rot_spawn_chance": 50
