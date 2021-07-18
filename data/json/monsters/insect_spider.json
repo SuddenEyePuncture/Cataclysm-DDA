@@ -2026,7 +2026,7 @@
       "baby_flags": [ "SPRING", "SUMMER" ]
     },
     "biosignature": { "biosig_item": "honeydew", "biosig_timer": 7000 },
-    "upgrades": { "half_life": 14, "into": "mon_aphid" }
+    "upgrades": { "age_grow": 8, "into": "mon_aphid" }
   },
   {
     "id": "mon_aphid",
@@ -2079,7 +2079,7 @@
     "reproduction": { "baby_egg": "egg_mantis", "baby_count": 1, "baby_timer": 30 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ]
     },
-    "upgrades": { "half_life": 14, "into": "mon_mantis_giant" }
+    "upgrades": { "age_grow": 14, "into": "mon_mantis_giant" }
   },
   {
     "id": "mon_mantis_giant",
@@ -2126,6 +2126,7 @@
       [ "GRAB_DRAG", 10 ],
       { "type": "leap", "cooldown": 8, "max_range": 5, "allow_no_target": false }
     ],
+    "upgrades": { "age_grow": 21, "into": "mon_mantis_mega" },
     "flags": [ "SEES", "HEARS", "CLIMBS", "PATH_AVOID_FIRE", "PATH_AVOID_FALL" ]
   },
   {
@@ -2152,11 +2153,13 @@
         "damage_max_instance": [ { "damage_type": "stab", "amount": 15, "armor_penetration": 0.6 } ]
       },
       [ "RANGED_PULL", 30 ],
-      [ "GRAB_DRAG", 10 ],
-      { "type": "leap", "cooldown": 8, "max_range": 5, "allow_no_target": false }
+      [ "GRAB_DRAG", 10 ]
     ],
     "extend": { "flags": [ "DESTROYS", "PUSH_MON", "PUSH_VEH" ] },
-    "delete": { "type": "leap", "cooldown": 8, "max_range": 5, "allow_no_target": false }
+    "delete": {
+    "type": "leap", "cooldown": 8, "max_range": 5, "allow_no_target": false,
+    "upgrades": { "age_grow": 21, "into": "mon_mantis_mega" }
+    }
   },
   {
     "id": "mon_mole_cricket",
@@ -2249,7 +2252,7 @@
     "reproduction": { "baby_egg": "egg_grasshopper", "baby_count": 3, "baby_timer": 15 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ]
     },
-    "upgrades": { "half_life": 7, "into": "mon_mantis_giant" }
+    "upgrades": { "age_grow": 8, "into": "mon_grasshopper_giant" }
   },
   {
     "id": "mon_grasshopper_giant",
@@ -2312,7 +2315,7 @@
     "vision_day": 8,
     "vision_night": 5,
     "harvest": "arachnid",
-    "upgrades": { "half_life": 12, "into": "mon_antlion_giant" },
+    "upgrades": { "age_grow": 12, "into": "mon_antlion_giant" },
     "anger_triggers": [ "PLAYER_WEAK", "PLAYER_CLOSE" ],
     "fear_triggers": [ "FIRE" ],
     "death_function": [ "NORMAL" ],
@@ -2377,7 +2380,7 @@
     "reproduction": { "baby_egg": "egg_strider", "baby_count": 3, "baby_timer": 10 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN" ]
     },
-    "upgrades": { "half_life": 14, "into": "mon_strider_giant" }
+    "upgrades": { "age_grow": 7, "into": "mon_strider_giant" }
   },
   {
     "id": "mon_strider_giant",
