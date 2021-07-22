@@ -2152,7 +2152,14 @@
     "color": "red_green",
     "weight": "815 kg",
     "melee_dice": 2,
-    "melee_cut": 20,
+    "melee_damage":
+  [ 
+  {
+    "damage_type": "cut",
+    "amount": 15.0,
+    "armor_penetration": 16
+  }
+  ],
     "dodge": 2,
     "attack_cost": 25,
     "special_attacks": [

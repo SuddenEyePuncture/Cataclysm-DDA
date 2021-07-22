@@ -3317,7 +3317,7 @@ invlets_bitset Character::allocated_invlets() const
 {
     invlets_bitset invlets = inv->allocated_invlets();
 
-    visit_items( [&invlets] ( item * i, item * ) -> VisitResponse {
+    visit_items( [&invlets]( item * i, item * ) -> VisitResponse {
         invlets.set( i->invlet );
         return VisitResponse::NEXT;
     } );
@@ -12846,6 +12846,12 @@ std::vector<proficiency_id> Character::known_proficiencies() const
 std::vector<proficiency_id> Character::learning_proficiencies() const
 {
     return _proficiencies->learning_profs();
+}
+
+int Character::get_proficiency_bonus( const std::string &category,
+                                      proficiency_bonus_type prof_bonus ) const
+{
+    return _proficiencies->get_proficiency_bonus( category, prof_bonus );
 }
 
 void Character::set_proficiency_practice( const proficiency_id &id, const time_duration &amount )
