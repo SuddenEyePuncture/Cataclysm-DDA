@@ -101,6 +101,7 @@ template <typename E> struct enum_traits;
 enum npc_attitude : int;
 enum action_id : int;
 enum class steed_type : int;
+enum class proficiency_bonus_type : int;
 
 using drop_location = std::pair<item_location, int>;
 using drop_locations = std::list<drop_location>;
@@ -1835,6 +1836,7 @@ class Character : public Creature, public visitable
         std::vector<display_proficiency> display_proficiencies() const;
         std::vector<proficiency_id> known_proficiencies() const;
         std::vector<proficiency_id> learning_proficiencies() const;
+        int get_proficiency_bonus( const std::string &category, proficiency_bonus_type prof_bonus ) const;
 
         // tests only!
         void set_proficiency_practice( const proficiency_id &id, const time_duration &amount );
@@ -2753,7 +2755,7 @@ class Character : public Creature, public visitable
         @param minimum_error Maximum error when skill is >= threshold */
         time_duration estimate_effect_dur( const skill_id &relevant_skill, const efftype_id &effect,
                                            const time_duration &error_magnitude,
-                                           const time_duration &mimimum_error, int threshold, const Creature &target ) const;
+                                           const time_duration &minimum_error, int threshold, const Creature &target ) const;
 
         // inherited from visitable
         bool has_quality( const quality_id &qual, int level = 1, int qty = 1 ) const override;

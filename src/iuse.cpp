@@ -193,6 +193,7 @@ static const efftype_id effect_riding( "riding" );
 static const efftype_id effect_run( "run" );
 static const efftype_id effect_sad( "sad" );
 static const efftype_id effect_monster_saddled( "monster_saddled" );
+static const efftype_id effect_nausea( "nausea" );
 static const efftype_id effect_sap( "sap" );
 static const efftype_id effect_shakes( "shakes" );
 static const efftype_id effect_sleep( "sleep" );
@@ -1087,12 +1088,15 @@ cata::optional<int> iuse::blech( player *p, item *it, bool, const tripoint & )
                             it->get_comestible()->healthy * multiplier );
         p->add_morale( MORALE_FOOD_BAD, it->get_comestible_fun() * multiplier, 60, 1_hours, 30_minutes,
                        false, it->type );
-    } else {
+    } else if( it->has_flag( flag_ACID ) || it->has_flag( flag_CORROSIVE ) ) {
         p->add_msg_if_player( m_bad, _( "Blech, that burns your throat!" ) );
         p->mod_pain( rng( 32, 64 ) );
         p->add_effect( effect_poison, 1_hours );
         p->apply_damage( nullptr, bodypart_id( "torso" ), rng( 4, 12 ) );
         p->vomit();
+    } else {
+        p->add_msg_if_player( m_bad, _( "Blech, you don't feel you can stomach much of that." ) );
+        p->add_effect( effect_nausea, 3_minutes );
     }
     return it->type->charges_to_use();
 }
@@ -9194,6 +9198,25 @@ cata::optional<int> iuse::weather_tool( player *p, item *it, bool, const tripoin
                 player_local_temp ) );
         std::string dirstring = get_dirstring( g->weather.winddirection );
         p->add_msg_if_player( m_neutral, _( "Wind Direction: From the %s." ), dirstring );
+    }
+
+    return 0;
+}
+
+cata::optional<int> iuse::sextant( player *p, item *, bool, const tripoint &pos )
+{
+    const std::pair<units::angle, units::angle> sun_position = sun_azimuth_altitude( calendar::turn );
+    const float altitude = to_degrees( sun_position.second );
+    if( debug_mode ) {
+        // Debug mode always shows all sun angles
+        const float azimuth = to_degrees( sun_position.first );
+        p->add_msg_if_player( m_neutral, "Sun altitude %.1f°, azimuth %.1f°", altitude, azimuth );
+    } else if( g->is_sheltered( pos ) ) {
+        p->add_msg_if_player( m_neutral, _( "You can't see the Sun from here." ) );
+    } else if( altitude > 0 ) {
+        p->add_msg_if_player( m_neutral, _( "The Sun is at an altitude of %.1f°." ), altitude );
+    } else {
+        p->add_msg_if_player( m_neutral, _( "The Sun is below the horizon." ) );
     }
 
     return 0;
